@@ -232,7 +232,7 @@ a:hover {
   object-fit: cover;
   object-position: center 35%;
   transform: scale(1.06);
-  filter: saturate(0.82) contrast(1.08) brightness(0.78);
+  filter: saturate(0.78) contrast(1.1) brightness(0.68);
   will-change: transform;
 }
 
@@ -240,8 +240,9 @@ a:hover {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(14, 15, 17, 0.72) 0%, rgba(14, 15, 17, 0.45) 28%, rgba(14, 15, 17, 0.7) 62%, rgba(14, 15, 17, 0.96) 100%),
-    radial-gradient(ellipse at 72% 28%, rgba(196, 163, 90, 0.14), transparent 52%);
+    linear-gradient(90deg, rgba(14, 15, 17, 0.9) 0%, rgba(14, 15, 17, 0.72) 38%, rgba(14, 15, 17, 0.35) 68%, rgba(14, 15, 17, 0.55) 100%),
+    linear-gradient(180deg, rgba(14, 15, 17, 0.78) 0%, rgba(14, 15, 17, 0.35) 30%, rgba(14, 15, 17, 0.72) 70%, rgba(14, 15, 17, 0.96) 100%),
+    radial-gradient(ellipse at 72% 28%, rgba(196, 163, 90, 0.12), transparent 52%);
 }
 
 .hero-sweep {
