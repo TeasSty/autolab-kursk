@@ -12,7 +12,7 @@ if (year) year.textContent = String(new Date().getFullYear())
 
 const hero = document.querySelector('[data-hero]')
 requestAnimationFrame(() => {
-  hero?.classList.add('is-open')
+  hero?.classList.add('is-lit')
 })
 
 const parallax = document.querySelector('[data-parallax]')
@@ -24,8 +24,8 @@ if (allowFx && parallax) {
       if (ticking) return
       ticking = true
       requestAnimationFrame(() => {
-        const y = Math.min(window.scrollY, 700)
-        parallax.style.transform = `scale(1.06) translate3d(0, ${y * 0.1}px, 0)`
+        const y = Math.min(window.scrollY, 640)
+        parallax.style.transform = `scale(1.04) translate3d(0, ${y * 0.08}px, 0)`
         ticking = false
       })
     },
@@ -40,7 +40,9 @@ if (switcher) {
 
   const activate = (index) => {
     tabs.forEach((tab, i) => {
-      tab.setAttribute('aria-selected', i === index ? 'true' : 'false')
+      const on = i === index
+      tab.setAttribute('aria-selected', on ? 'true' : 'false')
+      tab.tabIndex = on ? 0 : -1
     })
     panels.forEach((panel, i) => {
       const on = i === index
@@ -50,8 +52,21 @@ if (switcher) {
     })
   }
 
-  tabs.forEach((tab) => {
+  tabs.forEach((tab, i) => {
+    tab.tabIndex = i === 0 ? 0 : -1
     tab.addEventListener('click', () => activate(Number(tab.dataset.bay)))
+    tab.addEventListener('keydown', (e) => {
+      const cur = tabs.indexOf(tab)
+      let next = cur
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (cur + 1) % tabs.length
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (cur - 1 + tabs.length) % tabs.length
+      if (e.key === 'Home') next = 0
+      if (e.key === 'End') next = tabs.length - 1
+      if (next === cur) return
+      e.preventDefault()
+      activate(next)
+      tabs[next].focus()
+    })
   })
 
   switcher.querySelectorAll('[data-bay-cta]').forEach((link) => {
@@ -64,19 +79,6 @@ if (switcher) {
   })
 }
 
-document.querySelectorAll('[data-magnetic]').forEach((btn) => {
-  if (!allowFx || window.matchMedia('(pointer: coarse)').matches) return
-  btn.addEventListener('pointermove', (e) => {
-    const rect = btn.getBoundingClientRect()
-    const x = e.clientX - rect.left - rect.width / 2
-    const y = e.clientY - rect.top - rect.height / 2
-    btn.style.transform = `translate(${x * 0.08}px, ${y * 0.1}px)`
-  })
-  btn.addEventListener('pointerleave', () => {
-    btn.style.transform = ''
-  })
-})
-
 if (allowFx && 'IntersectionObserver' in window) {
   const cards = document.querySelectorAll('.case-card')
   const io = new IntersectionObserver(
@@ -85,12 +87,12 @@ if (allowFx && 'IntersectionObserver' in window) {
         if (!entry.isIntersecting) return
         const el = entry.target
         const i = [...cards].indexOf(el)
-        el.style.transitionDelay = `${Math.max(0, i) * 0.08}s`
+        el.style.transitionDelay = `${Math.max(0, i) * 0.07}s`
         el.classList.add('is-in')
         io.unobserve(el)
       })
     },
-    { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+    { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
   )
   cards.forEach((card) => io.observe(card))
 } else {
@@ -103,8 +105,7 @@ form?.addEventListener('submit', (e) => {
   e.preventDefault()
   const data = new FormData(form)
   if (String(data.get('company') || '').trim()) {
-    status.textContent = 'Отправка отклонена.'
-    status.classList.add('is-error')
+    status.textContent = ''
     return
   }
 
@@ -114,7 +115,7 @@ form?.addEventListener('submit', (e) => {
   const note = String(data.get('note') || '').trim()
 
   if (!name || !phone || !car) {
-    status.textContent = 'Укажите имя, телефон и авто или услугу.'
+    status.textContent = 'Нужны имя, телефон и авто или услуга.'
     status.classList.add('is-error')
     return
   }
