@@ -21,7 +21,7 @@ requestAnimationFrame(() => {
 })
 
 const revealNodes = document.querySelectorAll(
-  '.section-head, .why-list li, .service-grid article, .case-card'
+  '.section-head, .why-list li, .case-card'
 )
 if (!reduceMotion && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver(

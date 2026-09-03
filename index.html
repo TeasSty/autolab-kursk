@@ -95,16 +95,20 @@
       <section class="hero" id="top" data-hero>
         <div class="hero-stage">
           <div class="hero-door" data-door aria-hidden="true"></div>
-          <img
-            class="hero-photo"
-            src="./media/hero.jpg"
-            alt="Автосервис АвтоЛаб в Курске — бокс и автомобиль"
-            width="1600"
-            height="1067"
-            fetchpriority="high"
-            loading="eager"
-            data-parallax
-          />
+          <picture>
+            <source srcset="./media/hero.webp" type="image/webp" />
+            <img
+              class="hero-photo"
+              src="./media/hero.jpg"
+              alt="Автосервис АвтоЛаб в Курске — бокс и автомобиль"
+              width="960"
+              height="1280"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
+              data-parallax
+            />
+          </picture>
           <div class="hero-veil"></div>
           <div class="hero-sweep" aria-hidden="true"></div>
         </div>
@@ -169,7 +173,10 @@
 
             <div class="bay-stage">
               <article class="bay-panel is-active" role="tabpanel" data-panel="0">
-                <img src="./media/bay-1.jpg" alt="Диагностический бокс АвтоЛаб" width="1200" height="800" loading="lazy" />
+                <picture>
+                  <source srcset="./media/bay-1.webp" type="image/webp" />
+                  <img src="./media/bay-1.jpg" alt="Диагностический бокс АвтоЛаб" width="960" height="1280" loading="lazy" decoding="async" />
+                </picture>
                 <div class="bay-copy">
                   <h3>Диагностика</h3>
                   <p>Ошибки на приборке, Vanos, подсос воздуха, электрика — ищем причину, а не «меняем всё подряд».</p>
@@ -177,7 +184,10 @@
                 </div>
               </article>
               <article class="bay-panel" role="tabpanel" hidden data-panel="1">
-                <img src="./media/bay-2.jpg" alt="Чип-тюнинг и кодирование в АвтоЛаб" width="1200" height="800" loading="lazy" />
+                <picture>
+                  <source srcset="./media/bay-2.webp" type="image/webp" />
+                  <img src="./media/bay-2.jpg" alt="Чип-тюнинг и кодирование в АвтоЛаб" width="960" height="1280" loading="lazy" decoding="async" />
+                </picture>
                 <div class="bay-copy">
                   <h3>Чип и кодирование</h3>
                   <p>Stage 1/2, обновление софта, скрытые опции, русификация. Представитель VS Performance.</p>
@@ -185,7 +195,10 @@
                 </div>
               </article>
               <article class="bay-panel" role="tabpanel" hidden data-panel="2">
-                <img src="./media/bay-3.jpg" alt="Изготовление выхлопных систем" width="1200" height="800" loading="lazy" />
+                <picture>
+                  <source srcset="./media/bay-3.webp" type="image/webp" />
+                  <img src="./media/bay-3.jpg" alt="Изготовление выхлопных систем" width="1200" height="764" loading="lazy" decoding="async" />
+                </picture>
                 <div class="bay-copy">
                   <h3>Выхлоп</h3>
                   <p>Даунпайп, прямоток, управляемая заслонка — звук и тяга под ваш характер, не «громко ради громко».</p>
@@ -193,7 +206,10 @@
                 </div>
               </article>
               <article class="bay-panel" role="tabpanel" hidden data-panel="3">
-                <img src="./media/bay-4.jpg" alt="Кузовной и малярный участок" width="1200" height="800" loading="lazy" />
+                <picture>
+                  <source srcset="./media/bay-4.webp" type="image/webp" />
+                  <img src="./media/bay-4.jpg" alt="Кузовной и малярный участок" width="853" height="1280" loading="lazy" decoding="async" />
+                </picture>
                 <div class="bay-copy">
                   <h3>Кузов и детейлинг</h3>
                   <p>Малярно-кузовной цех, порошковая покраска дисков, оклейка плёнками — без поездок по городу.</p>
@@ -201,7 +217,10 @@
                 </div>
               </article>
               <article class="bay-panel" role="tabpanel" hidden data-panel="4">
-                <img src="./media/bay-5.jpg" alt="Мойка и зона ожидания АвтоЛаб" width="1200" height="800" loading="lazy" />
+                <picture>
+                  <source srcset="./media/bay-5.webp" type="image/webp" />
+                  <img src="./media/bay-5.jpg" alt="Мойка и зона ожидания АвтоЛаб" width="1280" height="960" loading="lazy" decoding="async" />
+                </picture>
                 <div class="bay-copy">
                   <h3>Мойка</h3>
                   <p>Пока моем — зона ожидания, чай и пицца. Отдельный номер мойки: +7 (910) 212-20-07.</p>
@@ -223,7 +242,10 @@
         </div>
         <div class="case-rail" tabindex="0" aria-label="Лента кейсов, горизонтальная прокрутка">
           <article class="case-card">
-            <img src="./media/case-1.jpg" alt="Работы по BMW в АвтоЛаб" width="800" height="600" loading="lazy" />
+            <picture>
+              <source srcset="./media/case-1.webp" type="image/webp" />
+              <img src="./media/case-1.jpg" alt="Работы по BMW в АвтоЛаб" width="1280" height="605" loading="lazy" decoding="async" />
+            </picture>
             <div class="case-body">
               <p class="case-model">BMW F30</p>
               <h3>Downpipe + Stage 1</h3>
@@ -235,7 +257,10 @@
             </div>
           </article>
           <article class="case-card">
-            <img src="./media/case-2.jpg" alt="BMW на подъёмнике в сервисе" width="800" height="600" loading="lazy" />
+            <picture>
+              <source srcset="./media/case-2.webp" type="image/webp" />
+              <img src="./media/case-2.jpg" alt="BMW на подъёмнике в сервисе" width="1280" height="960" loading="lazy" decoding="async" />
+            </picture>
             <div class="case-body">
               <p class="case-model">BMW X5 E70</p>
               <h3>Vanos и адаптация</h3>
@@ -247,7 +272,10 @@
             </div>
           </article>
           <article class="case-card">
-            <img src="./media/case-3.jpg" alt="Тюнинг и обслуживание BMW" width="800" height="600" loading="lazy" />
+            <picture>
+              <source srcset="./media/case-3.webp" type="image/webp" />
+              <img src="./media/case-3.jpg" alt="Тюнинг и обслуживание BMW" width="1280" height="960" loading="lazy" decoding="async" />
+            </picture>
             <div class="case-body">
               <p class="case-model">BMW X7</p>
               <h3>Stage 1 дизель</h3>
@@ -259,7 +287,10 @@
             </div>
           </article>
           <article class="case-card">
-            <img src="./media/case-4.jpg" alt="Комплекс АвтоЛаб изнутри" width="800" height="600" loading="lazy" />
+            <picture>
+              <source srcset="./media/case-4.webp" type="image/webp" />
+              <img src="./media/case-4.jpg" alt="Комплекс АвтоЛаб изнутри" width="960" height="1280" loading="lazy" decoding="async" />
+            </picture>
             <div class="case-body">
               <p class="case-model">BMW G30</p>
               <h3>Зеркало + кодировки</h3>
