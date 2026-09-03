@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>АвтоЛаб — клубный сервис BMW в Курске</title>
+    <meta
+      name="description"
+      content="АвтоЛаб в Курске: диагностика, чип-тюнинг, выхлоп, ремонт BMW и немецких марок. Гремяченская, 5. Запись: +7 (930) 857-77-00."
+    />
+    <meta name="theme-color" content="#0E0F11" />
+    <link rel="canonical" href="https://teassty.github.io/autolab-kursk/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="АвтоЛаб — клубный сервис BMW в Курске" />
+    <meta
+      property="og:description"
+      content="Диагностика, чип, выхлоп и ремонт BMW под одной крышей. Гремяченская, 5."
+    />
+    <meta property="og:image" content="https://teassty.github.io/autolab-kursk/media/hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E0F11'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='14' fill='%23C4A35A'%3EAL%3C/text%3E%3C/svg%3E" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "АвтоЛаб",
+        "alternateName": "AutoLab",
+        "url": "https://teassty.github.io/autolab-kursk/",
+        "telephone": "+79308577700",
+        "image": "https://teassty.github.io/autolab-kursk/media/hero.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Гремяченская, 5",
+          "addressLocality": "Курск",
+          "addressCountry": "RU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 51.7558,
+          "longitude": 36.1312
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "10:00",
+          "closes": "19:00"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "560"
+        },
+        "sameAs": ["https://vk.com/bmwkursk"]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К содержимому</a>
+    <div class="noise" aria-hidden="true"></div>
+    <canvas id="beam-canvas" class="beam-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="logo" href="#top" aria-label="АвтоЛаб — наверх">
+          <span class="logo-mark">AL</span>
+          <span class="logo-text">АвтоЛаб</span>
+        </a>
+        <nav class="nav" aria-label="Основная навигация">
+          <a href="#bays">Зоны</a>
+          <a href="#cases">Кейсы</a>
+          <a href="#services">Услуги</a>
+          <a href="#contact">Контакты</a>
+        </nav>
+        <a class="header-phone" href="tel:+79308577700">+7 (930) 857-77-00</a>
+        <a class="btn btn-sm" href="#book">Запись</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" data-hero>
+        <div class="hero-stage">
+          <div class="hero-door" data-door aria-hidden="true"></div>
+          <img
+            class="hero-photo"
+            src="./media/hero.jpg"
+            alt="Автосервис АвтоЛаб в Курске — бокс и автомобиль"
+            width="1600"
+            height="1067"
+            fetchpriority="high"
+            loading="eager"
+            data-parallax
+          />
+          <div class="hero-veil"></div>
+          <div class="hero-sweep" aria-hidden="true"></div>
+        </div>
+
+        <div class="shell hero-copy">
+          <p class="eyebrow">Курск · Гремяченская, 5 · ежедневно 10:00–19:00</p>
+          <h1>
+            <span class="hero-line" data-reveal>Клубный сервис</span>
+            <span class="hero-line accent" data-reveal>BMW</span>
+            <span class="hero-line" data-reveal>в одном комплексе</span>
+          </h1>
+          <p class="hero-lead" data-reveal>
+            Диагностика, чип-тюнинг, выхлоп и ремонт — без дилерской очереди.
+            Бесплатная консультация и чай, пока разбираем вашу машину.
+          </p>
+          <div class="hero-cta" data-reveal>
+            <a class="btn" href="#book" data-magnetic>Записаться</a>
+            <a class="btn btn-ghost" href="https://wa.me/79308577700?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%D0%90%D0%B2%D1%82%D0%BE%D0%9B%D0%B0%D0%B1." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+          <dl class="hero-meta" data-reveal>
+            <div>
+              <dt>Яндекс</dt>
+              <dd>4,9 · ~560 оценок</dd>
+            </div>
+            <div>
+              <dt>Фокус</dt>
+              <dd>BMW · Audi · MB · VW</dd>
+            </div>
+            <div>
+              <dt>Формат</dt>
+              <dd>Всё под одной крышей</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="model-ticker" aria-hidden="true">
+          <div class="model-track">
+            <span>E39</span><span>E60</span><span>E90</span><span>F10</span><span>F30</span><span>G30</span><span>X5</span><span>X7</span><span>STAGE&nbsp;1</span><span>STAGE&nbsp;2</span>
+            <span>E39</span><span>E60</span><span>E90</span><span>F10</span><span>F30</span><span>G30</span><span>X5</span><span>X7</span><span>STAGE&nbsp;1</span><span>STAGE&nbsp;2</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="bays section" id="bays">
+        <div class="shell">
+          <div class="section-head">
+            <p class="eyebrow">Signature · Bay Switcher</p>
+            <h2>Пять зон. Один визит.</h2>
+            <p class="section-lead">
+              Листайте боксы — как проезд по подъёмнику. Каждая зона: своя атмосфера и быстрая запись.
+            </p>
+          </div>
+
+          <div class="bay-switcher" data-bay-switcher>
+            <div class="bay-tabs" role="tablist" aria-label="Зоны комплекса">
+              <button type="button" role="tab" aria-selected="true" data-bay="0">Диагностика</button>
+              <button type="button" role="tab" aria-selected="false" data-bay="1">Чип / код</button>
+              <button type="button" role="tab" aria-selected="false" data-bay="2">Выхлоп</button>
+              <button type="button" role="tab" aria-selected="false" data-bay="3">Кузов</button>
+              <button type="button" role="tab" aria-selected="false" data-bay="4">Мойка</button>
+            </div>
+
+            <div class="bay-stage">
+              <article class="bay-panel is-active" role="tabpanel" data-panel="0">
+                <img src="./media/bay-1.jpg" alt="Диагностический бокс АвтоЛаб" width="1200" height="800" loading="lazy" />
+                <div class="bay-copy">
+                  <h3>Диагностика</h3>
+                  <p>Ошибки на приборке, Vanos, подсос воздуха, электрика — ищем причину, а не «меняем всё подряд».</p>
+                  <a class="text-link" href="#book" data-bay-cta>Запись на диагностику</a>
+                </div>
+              </article>
+              <article class="bay-panel" role="tabpanel" hidden data-panel="1">
+                <img src="./media/bay-2.jpg" alt="Чип-тюнинг и кодирование в АвтоЛаб" width="1200" height="800" loading="lazy" />
+                <div class="bay-copy">
+                  <h3>Чип и кодирование</h3>
+                  <p>Stage 1/2, обновление софта, скрытые опции, русификация. Представитель VS Performance.</p>
+                  <a class="text-link" href="#book" data-bay-cta>Запись на чип</a>
+                </div>
+              </article>
+              <article class="bay-panel" role="tabpanel" hidden data-panel="2">
+                <img src="./media/bay-3.jpg" alt="Изготовление выхлопных систем" width="1200" height="800" loading="lazy" />
+                <div class="bay-copy">
+                  <h3>Выхлоп</h3>
+                  <p>Даунпайп, прямоток, управляемая заслонка — звук и тяга под ваш характер, не «громко ради громко».</p>
+                  <a class="text-link" href="#book" data-bay-cta>Запись на выхлоп</a>
+                </div>
+              </article>
+              <article class="bay-panel" role="tabpanel" hidden data-panel="3">
+                <img src="./media/bay-4.jpg" alt="Кузовной и малярный участок" width="1200" height="800" loading="lazy" />
+                <div class="bay-copy">
+                  <h3>Кузов и детейлинг</h3>
+                  <p>Малярно-кузовной цех, порошковая покраска дисков, оклейка плёнками — без поездок по городу.</p>
+                  <a class="text-link" href="#book" data-bay-cta>Запись на кузов</a>
+                </div>
+              </article>
+              <article class="bay-panel" role="tabpanel" hidden data-panel="4">
+                <img src="./media/bay-5.jpg" alt="Мойка и зона ожидания АвтоЛаб" width="1200" height="800" loading="lazy" />
+                <div class="bay-copy">
+                  <h3>Мойка</h3>
+                  <p>Пока моем — зона ожидания, чай и пицца. Отдельный номер мойки: +7 (910) 212-20-07.</p>
+                  <a class="text-link" href="tel:+79102122007">Позвонить на мойку</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cases section" id="cases">
+        <div class="shell">
+          <div class="section-head">
+            <p class="eyebrow">Из реальных работ</p>
+            <h2>В работе</h2>
+            <p class="section-lead">Кейсы из ленты сообщества — без стоковых улыбок и выдуманных «1000 клиентов».</p>
+          </div>
+        </div>
+        <div class="case-rail" tabindex="0" aria-label="Лента кейсов, горизонтальная прокрутка">
+          <article class="case-card">
+            <img src="./media/case-1.jpg" alt="Работы по BMW в АвтоЛаб" width="800" height="600" loading="lazy" />
+            <div class="case-body">
+              <p class="case-model">BMW F30</p>
+              <h3>Downpipe + Stage 1</h3>
+              <ul>
+                <li>Сварка и установка downpipe</li>
+                <li>Прямоточный глушитель и заслонка</li>
+                <li>Чип Stage 1, прокладки теплообменника</li>
+              </ul>
+            </div>
+          </article>
+          <article class="case-card">
+            <img src="./media/case-2.jpg" alt="BMW на подъёмнике в сервисе" width="800" height="600" loading="lazy" />
+            <div class="case-body">
+              <p class="case-model">BMW X5 E70</p>
+              <h3>Vanos и адаптация</h3>
+              <ul>
+                <li>Проверка впуска дымогенератором</li>
+                <li>Клапаны и звёзды Vanos</li>
+                <li>Сброс адаптаций, заводская прошивка</li>
+              </ul>
+            </div>
+          </article>
+          <article class="case-card">
+            <img src="./media/case-3.jpg" alt="Тюнинг и обслуживание BMW" width="800" height="600" loading="lazy" />
+            <div class="case-body">
+              <p class="case-model">BMW X7</p>
+              <h3>Stage 1 дизель</h3>
+              <ul>
+                <li>249 → 335 л.с.</li>
+                <li>Момент 620 → 740 Н·м</li>
+                <li>Программное увеличение мощности</li>
+              </ul>
+            </div>
+          </article>
+          <article class="case-card">
+            <img src="./media/case-4.jpg" alt="Комплекс АвтоЛаб изнутри" width="800" height="600" loading="lazy" />
+            <div class="case-body">
+              <p class="case-model">BMW G30</p>
+              <h3>Зеркало + кодировки</h3>
+              <ul>
+                <li>Замена зеркала заднего вида</li>
+                <li>Необходимые кодировки блоков</li>
+                <li>Проверка после установки</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="why section" id="why">
+        <div class="shell why-grid">
+          <div>
+            <p class="eyebrow">Почему сюда</p>
+            <h2>Не дилер. Не «универсальный гараж».</h2>
+          </div>
+          <ul class="why-list">
+            <li>
+              <strong>Честный разбор</strong>
+              <span>Консультируем бесплатно. Не продаём лишнее — это прямо в тоне общения сообщества.</span>
+            </li>
+            <li>
+              <strong>BMW-фокус + другие марки</strong>
+              <span>Основной упор на BMW; Audi, Mercedes, VW — тоже в работе.</span>
+            </li>
+            <li>
+              <strong>Комплекс, не разъезды</strong>
+              <span>Ремонт, чип, выхлоп, кузов, развал, мойка — на Гремяченской, 5.</span>
+            </li>
+            <li>
+              <strong>Отзывы на картах</strong>
+              <span>4,9 на Яндекс.Картах · порядка 560 оценок — проверяемая цифра, не маркетинг.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="services section" id="services">
+        <div class="shell">
+          <div class="section-head">
+            <p class="eyebrow">Услуги</p>
+            <h2>Что делаем</h2>
+            <p class="section-lead">Ориентиры цен с витрины карт — точную смету даём после диагностики.</p>
+          </div>
+          <div class="service-grid">
+            <article>
+              <h3>Техническое обслуживание</h3>
+              <p class="price">от 1&nbsp;000&nbsp;₽</p>
+              <p>Масла, фильтры, плановое ТО, подбор запчастей.</p>
+            </article>
+            <article>
+              <h3>Ремонт BMW</h3>
+              <p class="price">от 5&nbsp;000&nbsp;₽</p>
+              <p>Двигатель, ходовая, электрика, турбины, АКПП — по факту неисправности.</p>
+            </article>
+            <article>
+              <h3>Чип / кодирование</h3>
+              <p class="price">по запросу</p>
+              <p>Stage, русификация, дооснащение, обновление ПО.</p>
+            </article>
+            <article>
+              <h3>Выхлоп и тюнинг</h3>
+              <p class="price">по запросу</p>
+              <p>Изготовление систем, даунпайп, стайлинг, Ambient Light от 18&nbsp;000&nbsp;₽.</p>
+            </article>
+            <article>
+              <h3>Кузов / диски / плёнка</h3>
+              <p class="price">по запросу</p>
+              <p>Малярка, порошок дисков, оклейка, детейлинг.</p>
+            </article>
+            <article>
+              <h3>Развал / шиномонтаж / мойка</h3>
+              <p class="price">по запросу</p>
+              <p>Ежедневно в комплексе. Мойка: +7 (910) 212-20-07.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="shell contact-grid">
+          <div>
+            <p class="eyebrow">Как добраться</p>
+            <h2>Гремяченская, 5</h2>
+            <p class="section-lead">Курск. Ежедневно 10:00–19:00. Закрытая парковка, зона ожидания.</p>
+            <ul class="contact-list">
+              <li>
+                <span>Сервис</span>
+                <a href="tel:+79308577700">+7 (930) 857-77-00</a>
+              </li>
+              <li>
+                <span>Ресепшн</span>
+                <a href="tel:+79192122007">+7 (919) 212-20-07</a>
+              </li>
+              <li>
+                <span>Городской</span>
+                <a href="tel:+74712222007">+7 (4712) 22-20-07</a>
+              </li>
+              <li>
+                <span>Сообщество</span>
+                <a href="https://vk.com/bmwkursk" target="_blank" rel="noopener noreferrer">vk.com/bmwkursk</a>
+              </li>
+              <li>
+                <span>Карты</span>
+                <a href="https://yandex.ru/maps/org/avtolab/10344459316/" target="_blank" rel="noopener noreferrer">Яндекс · АвтоЛаб</a>
+              </li>
+            </ul>
+          </div>
+          <div class="map-frame">
+            <iframe
+              title="АвтоЛаб на карте — Курск, Гремяченская 5"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://yandex.ru/map-widget/v1/?ll=36.131247%2C51.755802&amp;z=16&amp;pt=36.131247%2C51.755802%2Cpm2rdm&amp;l=map"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="book section" id="book">
+        <div class="shell book-panel">
+          <div>
+            <p class="eyebrow">Запись</p>
+            <h2>Напишите — ответим и подскажем срок</h2>
+            <p class="section-lead">Форма откроет WhatsApp с готовым текстом. Без фейковой «отправки в никуда».</p>
+          </div>
+          <form class="book-form" data-book-form novalidate>
+            <label>
+              Имя
+              <input name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться" />
+            </label>
+            <label>
+              Телефон
+              <input name="phone" type="tel" autocomplete="tel" required placeholder="+7…" />
+            </label>
+            <label>
+              Авто / услуга
+              <input name="car" type="text" required placeholder="Например: BMW F30, диагностика" />
+            </label>
+            <label class="full">
+              Комментарий
+              <textarea name="note" rows="3" placeholder="Что беспокоит, когда удобно приехать"></textarea>
+            </label>
+            <input class="hp" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <button class="btn" type="submit">Открыть WhatsApp</button>
+            <p class="form-hint" data-form-status role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>© <span data-year></span> АвтоЛаб · Курск</p>
+        <p>Фото — из галереи организации на Яндекс.Картах и материалов сообщества.</p>
+      </div>
+    </footer>
+
+    <div class="mobile-bar" aria-label="Быстрые действия">
+      <a href="tel:+79308577700">Позвонить</a>
+      <a class="is-primary" href="#book">Записаться</a>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
