@@ -8,37 +8,10 @@ const allowFx = !reduceMotion && !saveData && !lowEnd
 const year = document.querySelector('[data-year]')
 if (year) year.textContent = String(new Date().getFullYear())
 
-const header = document.querySelector('[data-header]')
-const onScrollHeader = () => {
-  header?.classList.toggle('is-scrolled', window.scrollY > 24)
-}
-onScrollHeader()
-window.addEventListener('scroll', onScrollHeader, { passive: true })
-
 const hero = document.querySelector('[data-hero]')
 requestAnimationFrame(() => {
   hero?.classList.add('is-open')
 })
-
-const revealNodes = document.querySelectorAll(
-  '.section-head, .why-list li, .case-card'
-)
-if (!reduceMotion && 'IntersectionObserver' in window) {
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible')
-          io.unobserve(entry.target)
-        }
-      }
-    },
-    { threshold: 0.18, rootMargin: '0px 0px -8% 0px' }
-  )
-  revealNodes.forEach((node) => io.observe(node))
-} else {
-  revealNodes.forEach((node) => node.classList.add('is-visible'))
-}
 
 const parallax = document.querySelector('[data-parallax]')
 if (allowFx && parallax) {
@@ -50,7 +23,7 @@ if (allowFx && parallax) {
       ticking = true
       requestAnimationFrame(() => {
         const y = Math.min(window.scrollY, 700)
-        parallax.style.transform = `scale(1.08) translate3d(0, ${y * 0.12}px, 0)`
+        parallax.style.transform = `scale(1.06) translate3d(0, ${y * 0.1}px, 0)`
         ticking = false
       })
     },
@@ -65,8 +38,7 @@ if (switcher) {
 
   const activate = (index) => {
     tabs.forEach((tab, i) => {
-      const on = i === index
-      tab.setAttribute('aria-selected', on ? 'true' : 'false')
+      tab.setAttribute('aria-selected', i === index ? 'true' : 'false')
     })
     panels.forEach((panel, i) => {
       const on = i === index
@@ -120,7 +92,7 @@ form?.addEventListener('submit', (e) => {
   const note = String(data.get('note') || '').trim()
 
   if (!name || !phone || !car) {
-    status.textContent = 'Заполните имя, телефон и авто/услугу.'
+    status.textContent = 'Укажите имя, телефон и авто или услугу.'
     status.classList.add('is-error')
     return
   }
@@ -150,8 +122,6 @@ function initBeams() {
   const ctx = canvas.getContext('2d', { alpha: true })
   if (!ctx) return
 
-  let w = 0
-  let h = 0
   let raf = 0
   const beams = Array.from({ length: 3 }, (_, i) => ({
     x: 0.55 + i * 0.12,
@@ -161,8 +131,8 @@ function initBeams() {
   }))
 
   const resize = () => {
-    w = canvas.width = window.innerWidth * devicePixelRatio
-    h = canvas.height = window.innerHeight * devicePixelRatio
+    canvas.width = window.innerWidth * devicePixelRatio
+    canvas.height = window.innerHeight * devicePixelRatio
     canvas.style.width = `${window.innerWidth}px`
     canvas.style.height = `${window.innerHeight}px`
     ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0)
@@ -178,7 +148,7 @@ function initBeams() {
       const x = window.innerWidth * beam.x + drift
       const grad = ctx.createLinearGradient(x, 0, x + beam.width, window.innerHeight)
       grad.addColorStop(0, 'rgba(196,163,90,0)')
-      grad.addColorStop(0.45, 'rgba(196,163,90,0.05)')
+      grad.addColorStop(0.45, 'rgba(196,163,90,0.04)')
       grad.addColorStop(1, 'rgba(196,163,90,0)')
       ctx.fillStyle = grad
       ctx.beginPath()
@@ -192,11 +162,10 @@ function initBeams() {
     raf = requestAnimationFrame(draw)
   }
 
-  const onVis = () => {
+  document.addEventListener('visibilitychange', () => {
     if (document.hidden) cancelAnimationFrame(raf)
     else raf = requestAnimationFrame(draw)
-  }
-  document.addEventListener('visibilitychange', onVis)
+  })
   raf = requestAnimationFrame(draw)
 }
 
