@@ -8,7 +8,7 @@
       name="description"
       content="АвтоЛаб в Курске: диагностика, чип-тюнинг, выхлоп и ремонт BMW. Гремяченская, 5. Запись: +7 (930) 857-77-00."
     />
-    <meta name="theme-color" content="#121416" />
+    <meta name="theme-color" content="#0A0B0C" />
     <link rel="canonical" href="https://teassty.github.io/autolab-kursk/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
@@ -22,10 +22,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Onest:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23121416'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='13' font-weight='700' fill='%23E09A1A'%3EAL%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0B0C'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='13' font-weight='700' fill='%23B8954A'%3EAL%3C/text%3E%3C/svg%3E" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -64,6 +64,8 @@
   <body>
     <a class="skip-link" href="#main">К содержимому</a>
 
+    <div class="grain" aria-hidden="true"></div>
+
     <header class="site-header" data-header>
       <div class="shell header-inner">
         <a class="logo" href="#top" aria-label="АвтоЛаб — наверх">
@@ -77,238 +79,250 @@
           <a href="#contact">Контакты</a>
         </nav>
         <a class="header-phone" href="tel:+79308577700">+7 (930) 857-77-00</a>
-        <a class="btn btn-sm" href="#book">Запись</a>
+        <a class="btn btn-sm" href="#book" data-magnetic>Запись</a>
       </div>
     </header>
 
     <main id="main">
       <section class="hero" id="top" data-hero>
         <div class="hero-stage">
-          <picture>
-            <source srcset="./media/hero.webp" type="image/webp" />
-            <img
-              class="hero-photo"
-              src="./media/hero.jpg"
-              alt="Бокс АвтоЛаб на Гремяченской, 5"
-              width="1600"
-              height="1000"
-              fetchpriority="high"
-              loading="eager"
-              decoding="async"
-              data-parallax
-            />
-          </picture>
+          <div class="hero-mask" data-hero-mask>
+            <picture>
+              <source srcset="./media/hero.webp" type="image/webp" />
+              <img
+                class="hero-photo"
+                src="./media/hero.jpg"
+                alt="Бокс АвтоЛаб на Гремяченской, 5"
+                width="1600"
+                height="1000"
+                fetchpriority="high"
+                loading="eager"
+                decoding="async"
+                data-parallax
+              />
+            </picture>
+          </div>
           <div class="hero-scrim" aria-hidden="true"></div>
+          <div class="hero-asphalt" aria-hidden="true"></div>
         </div>
 
-        <div class="hero-board" data-reveal>
-          <p class="hero-meta">Курск · Гремяченская, 5 · 10:00–19:00</p>
-          <h1>АвтоЛаб</h1>
-          <p class="hero-offer">
-            Запись на BMW: диагностика, чип, выхлоп, ремонт — на одной площадке.
-          </p>
-          <div class="hero-cta">
-            <a class="btn" href="#book">Записаться в WhatsApp</a>
+        <div class="hero-board">
+          <p class="hero-meta" data-split>Курск · Гремяченская, 5</p>
+          <h1 class="hero-title" data-split>
+            <span class="hero-title-line">АвтоЛаб</span>
+          </h1>
+          <p class="hero-kicker" data-split>Бокс, не конвейер</p>
+          <p class="hero-offer" data-split>Диагностика, чип, выхлоп и ремонт BMW — на одной площадке.</p>
+          <div class="hero-cta" data-split>
+            <a class="btn" href="#book" data-magnetic>Записаться</a>
             <a class="hero-phone" href="tel:+79308577700">+7 (930) 857-77-00</a>
           </div>
         </div>
+
+        <p class="hero-scroll" aria-hidden="true"><span>Дальше — зоны</span></p>
       </section>
 
-      <section class="bays section" id="bays">
-        <div class="shell bay-layout">
-          <header class="bay-intro">
-            <h2>Пять зон на Гремяченской</h2>
-            <p>
-              Диагностика, чип, выхлоп, кузов и мойка — без поездок по городу.
-              Переключайте зону ниже.
-            </p>
-          </header>
+      <section class="bays" id="bays" data-bays>
+        <div class="bay-head shell">
+          <div class="bay-head-copy">
+            <p class="eyebrow">Пять зон</p>
+            <h2>Пройдите по боксу</h2>
+            <p class="bay-lead">Диагностика, чип, выхлоп, кузов, мойка — без поездок по городу. Тяните ленту вбок.</p>
+          </div>
+          <div class="bay-progress" aria-hidden="true">
+            <span class="bay-progress-index" data-bay-index>01</span>
+            <span class="bay-progress-track"><span class="bay-progress-fill" data-bay-fill></span></span>
+            <span class="bay-progress-total">05</span>
+          </div>
+        </div>
 
-          <div class="bay-switcher" data-bay-switcher>
-            <div class="bay-tabs" role="tablist" aria-label="Зоны комплекса">
-              <button type="button" role="tab" id="tab-bay-0" aria-controls="panel-bay-0" aria-selected="true" data-bay="0">Диагностика</button>
-              <button type="button" role="tab" id="tab-bay-1" aria-controls="panel-bay-1" aria-selected="false" data-bay="1">Чип</button>
-              <button type="button" role="tab" id="tab-bay-2" aria-controls="panel-bay-2" aria-selected="false" data-bay="2">Выхлоп</button>
-              <button type="button" role="tab" id="tab-bay-3" aria-controls="panel-bay-3" aria-selected="false" data-bay="3">Кузов</button>
-              <button type="button" role="tab" id="tab-bay-4" aria-controls="panel-bay-4" aria-selected="false" data-bay="4">Мойка</button>
-            </div>
+        <div class="bay-rail" data-bay-rail>
+          <div class="bay-tabs" role="tablist" aria-label="Зоны комплекса">
+            <button type="button" role="tab" id="tab-bay-0" aria-controls="panel-bay-0" aria-selected="true" data-bay="0">Диагностика</button>
+            <button type="button" role="tab" id="tab-bay-1" aria-controls="panel-bay-1" aria-selected="false" data-bay="1">Чип</button>
+            <button type="button" role="tab" id="tab-bay-2" aria-controls="panel-bay-2" aria-selected="false" data-bay="2">Выхлоп</button>
+            <button type="button" role="tab" id="tab-bay-3" aria-controls="panel-bay-3" aria-selected="false" data-bay="3">Кузов</button>
+            <button type="button" role="tab" id="tab-bay-4" aria-controls="panel-bay-4" aria-selected="false" data-bay="4">Мойка</button>
+          </div>
 
-            <div class="bay-stage">
-              <article class="bay-panel is-active" role="tabpanel" id="panel-bay-0" aria-labelledby="tab-bay-0" data-panel="0">
-                <div class="bay-media">
-                  <picture>
-                    <source srcset="./media/bay-1.webp" type="image/webp" />
-                    <img src="./media/bay-1.jpg" alt="Бокс диагностики АвтоЛаб" width="1200" height="750" loading="lazy" decoding="async" />
-                  </picture>
-                </div>
-                <div class="bay-copy">
-                  <p class="bay-num">01</p>
-                  <h3>Диагностика</h3>
-                  <p>Ошибки, Vanos, подсос, электрика. Сначала находим причину — потом считаем ремонт и сроки.</p>
-                  <a class="text-link" href="#book" data-bay-cta>Записаться на диагностику</a>
-                </div>
-              </article>
-              <article class="bay-panel" role="tabpanel" id="panel-bay-1" aria-labelledby="tab-bay-1" hidden data-panel="1">
-                <div class="bay-media">
-                  <picture>
-                    <source srcset="./media/bay-2.webp" type="image/webp" />
-                    <img src="./media/bay-2.jpg" alt="Чип-тюнинг в АвтоЛаб" width="1200" height="750" loading="lazy" decoding="async" />
-                  </picture>
-                </div>
-                <div class="bay-copy">
-                  <p class="bay-num">02</p>
-                  <h3>Чип и кодирование</h3>
-                  <p>Stage 1/2, русификация, скрытые опции, обновление ПО. Прошивки VS Performance.</p>
-                  <a class="text-link" href="#book" data-bay-cta>Записаться на чип</a>
-                </div>
-              </article>
-              <article class="bay-panel" role="tabpanel" id="panel-bay-2" aria-labelledby="tab-bay-2" hidden data-panel="2">
-                <div class="bay-media">
-                  <picture>
-                    <source srcset="./media/bay-3.webp" type="image/webp" />
-                    <img src="./media/bay-3.jpg" alt="Зона выхлопа и сервиса АвтоЛаб" width="1200" height="750" loading="lazy" decoding="async" />
-                  </picture>
-                </div>
-                <div class="bay-copy">
-                  <p class="bay-num">03</p>
-                  <h3>Выхлоп</h3>
-                  <p>Даунпайп, прямоток, заслонка — звук и тяга под задачу, не «глушитель ради громкости».</p>
-                  <a class="text-link" href="#book" data-bay-cta>Записаться на выхлоп</a>
-                </div>
-              </article>
-              <article class="bay-panel" role="tabpanel" id="panel-bay-3" aria-labelledby="tab-bay-3" hidden data-panel="3">
-                <div class="bay-media">
-                  <picture>
-                    <source srcset="./media/bay-4.webp" type="image/webp" />
-                    <img src="./media/bay-4.jpg" alt="Кузов и детейлинг АвтоЛаб" width="1200" height="750" loading="lazy" decoding="async" />
-                  </picture>
-                </div>
-                <div class="bay-copy">
-                  <p class="bay-num">04</p>
-                  <h3>Кузов и детейлинг</h3>
-                  <p>Малярка, порошок дисков, плёнка, детейлинг — всё здесь, на Гремяченской.</p>
-                  <a class="text-link" href="#book" data-bay-cta>Записаться на кузов</a>
-                </div>
-              </article>
-              <article class="bay-panel" role="tabpanel" id="panel-bay-4" aria-labelledby="tab-bay-4" hidden data-panel="4">
-                <div class="bay-media">
-                  <picture>
-                    <source srcset="./media/bay-5.webp" type="image/webp" />
-                    <img src="./media/bay-5.jpg" alt="Мойка АвтоЛаб" width="1200" height="750" loading="lazy" decoding="async" />
-                  </picture>
-                </div>
-                <div class="bay-copy">
-                  <p class="bay-num">05</p>
-                  <h3>Мойка</h3>
-                  <p>Пока моем авто — можно подождать у нас. Мойка: +7 (910) 212-20-07.</p>
-                  <a class="text-link" href="tel:+79102122007">Позвонить на мойку</a>
-                </div>
-              </article>
-            </div>
+          <div class="bay-track" data-bay-track tabindex="0" aria-label="Лента зон бокса">
+            <article class="bay-panel is-active" role="tabpanel" id="panel-bay-0" aria-labelledby="tab-bay-0" data-panel="0">
+              <div class="bay-media">
+                <picture>
+                  <source srcset="./media/bay-1.webp" type="image/webp" />
+                  <img src="./media/bay-1.jpg" alt="Бокс диагностики АвтоЛаб" width="1200" height="750" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="bay-copy">
+                <p class="bay-num">01</p>
+                <h3>Диагностика</h3>
+                <p>Ошибки, Vanos, подсос, электрика. Сначала причина — потом смета и сроки.</p>
+                <a class="text-link" href="#book" data-bay-cta>На диагностику</a>
+              </div>
+            </article>
+
+            <article class="bay-panel" role="tabpanel" id="panel-bay-1" aria-labelledby="tab-bay-1" data-panel="1">
+              <div class="bay-media">
+                <picture>
+                  <source srcset="./media/bay-2.webp" type="image/webp" />
+                  <img src="./media/bay-2.jpg" alt="Чип-тюнинг в АвтоЛаб" width="1200" height="750" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="bay-copy">
+                <p class="bay-num">02</p>
+                <h3>Чип и кодирование</h3>
+                <p>Stage 1/2, русификация, скрытые опции, обновление ПО. Прошивки VS Performance.</p>
+                <a class="text-link" href="#book" data-bay-cta>На чип</a>
+              </div>
+            </article>
+
+            <article class="bay-panel" role="tabpanel" id="panel-bay-2" aria-labelledby="tab-bay-2" data-panel="2">
+              <div class="bay-media">
+                <picture>
+                  <source srcset="./media/bay-3.webp" type="image/webp" />
+                  <img src="./media/bay-3.jpg" alt="Зона выхлопа и сервиса АвтоЛаб" width="1200" height="750" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="bay-copy">
+                <p class="bay-num">03</p>
+                <h3>Выхлоп</h3>
+                <p>Даунпайп, прямоток, заслонка — звук и тяга под задачу, не «глушитель ради громкости».</p>
+                <a class="text-link" href="#book" data-bay-cta>На выхлоп</a>
+              </div>
+            </article>
+
+            <article class="bay-panel" role="tabpanel" id="panel-bay-3" aria-labelledby="tab-bay-3" data-panel="3">
+              <div class="bay-media">
+                <picture>
+                  <source srcset="./media/bay-4.webp" type="image/webp" />
+                  <img src="./media/bay-4.jpg" alt="Кузов и детейлинг АвтоЛаб" width="1200" height="750" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="bay-copy">
+                <p class="bay-num">04</p>
+                <h3>Кузов и детейлинг</h3>
+                <p>Малярка, порошок дисков, плёнка, детейлинг — всё здесь, на Гремяченской.</p>
+                <a class="text-link" href="#book" data-bay-cta>На кузов</a>
+              </div>
+            </article>
+
+            <article class="bay-panel" role="tabpanel" id="panel-bay-4" aria-labelledby="tab-bay-4" data-panel="4">
+              <div class="bay-media">
+                <picture>
+                  <source srcset="./media/bay-5.webp" type="image/webp" />
+                  <img src="./media/bay-5.jpg" alt="Мойка АвтоЛаб" width="1200" height="750" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="bay-copy">
+                <p class="bay-num">05</p>
+                <h3>Мойка</h3>
+                <p>Пока моем авто — можно подождать у нас. Мойка: +7 (910) 212-20-07.</p>
+                <a class="text-link" href="tel:+79102122007">Позвонить на мойку</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="cases section" id="cases">
-        <div class="shell cases-layout">
-          <header class="cases-intro">
-            <h2>Из бокса</h2>
-            <p>Недавние работы с постов АвтоЛаб — модель и что сделали.</p>
-          </header>
+        <header class="cases-intro">
+          <p class="eyebrow">Из бокса</p>
+          <h2>Недавние работы</h2>
+          <p>Модель и что сделали — с постов АвтоЛаб.</p>
+        </header>
 
-          <div class="case-rail">
-            <article class="case-card case-wide">
-              <div class="case-media">
-                <picture>
-                  <source srcset="./media/case-1.webp" type="image/webp" />
-                  <img src="./media/case-1.jpg" alt="BMW F30 после работ по выхлопу" width="900" height="560" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <div class="case-body">
-                <p class="case-model">BMW F30</p>
-                <h3>Downpipe + Stage 1</h3>
-                <ul>
-                  <li>Сварка и установка downpipe</li>
-                  <li>Прямоток и управляемая заслонка</li>
-                  <li>Чип Stage 1</li>
-                </ul>
-              </div>
-            </article>
+        <div class="case-rail">
+          <article class="case-card case-wide" data-reveal>
+            <div class="case-media">
+              <picture>
+                <source srcset="./media/case-1.webp" type="image/webp" />
+                <img src="./media/case-1.jpg" alt="BMW F30 после работ по выхлопу" width="900" height="560" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="case-body">
+              <p class="case-model">BMW F30</p>
+              <h3>Downpipe + Stage 1</h3>
+              <ul>
+                <li>Сварка и установка downpipe</li>
+                <li>Прямоток и управляемая заслонка</li>
+                <li>Чип Stage 1</li>
+              </ul>
+            </div>
+          </article>
 
-            <article class="case-card">
-              <div class="case-media">
-                <picture>
-                  <source srcset="./media/case-2.webp" type="image/webp" />
-                  <img src="./media/case-2.jpg" alt="BMW X5 E70 на обслуживании" width="900" height="560" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <div class="case-body">
-                <p class="case-model">BMW X5 E70</p>
-                <h3>Vanos</h3>
-                <ul>
-                  <li>Проверка впуска дымогенератором</li>
-                  <li>Клапаны и звёзды Vanos</li>
-                  <li>Сброс адаптаций</li>
-                </ul>
-              </div>
-            </article>
+          <article class="case-card" data-reveal>
+            <div class="case-media">
+              <picture>
+                <source srcset="./media/case-2.webp" type="image/webp" />
+                <img src="./media/case-2.jpg" alt="BMW X5 E70 на обслуживании" width="900" height="560" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="case-body">
+              <p class="case-model">BMW X5 E70</p>
+              <h3>Vanos</h3>
+              <ul>
+                <li>Проверка впуска дымогенератором</li>
+                <li>Клапаны и звёзды Vanos</li>
+                <li>Сброс адаптаций</li>
+              </ul>
+            </div>
+          </article>
 
-            <article class="case-card">
-              <div class="case-media">
-                <picture>
-                  <source srcset="./media/case-3.webp" type="image/webp" />
-                  <img src="./media/case-3.jpg" alt="BMW X7 после Stage 1" width="900" height="560" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <div class="case-body">
-                <p class="case-model">BMW X7</p>
-                <h3>Stage 1 дизель</h3>
-                <ul>
-                  <li>Прошивка Stage 1</li>
-                  <li>Проверка после прошивки</li>
-                  <li>По ощущениям — заметно живее тяга</li>
-                </ul>
-              </div>
-            </article>
+          <article class="case-card" data-reveal>
+            <div class="case-media">
+              <picture>
+                <source srcset="./media/case-3.webp" type="image/webp" />
+                <img src="./media/case-3.jpg" alt="BMW X7 после Stage 1" width="900" height="560" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="case-body">
+              <p class="case-model">BMW X7</p>
+              <h3>Stage 1 дизель</h3>
+              <ul>
+                <li>Прошивка Stage 1</li>
+                <li>Проверка после прошивки</li>
+                <li>По ощущениям — заметно живее тяга</li>
+              </ul>
+            </div>
+          </article>
 
-            <article class="case-card case-wide">
-              <div class="case-media">
-                <picture>
-                  <source srcset="./media/case-4.webp" type="image/webp" />
-                  <img src="./media/case-4.jpg" alt="BMW G30 зеркало и кодировки" width="900" height="560" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <div class="case-body">
-                <p class="case-model">BMW G30</p>
-                <h3>Зеркало и кодировки</h3>
-                <ul>
-                  <li>Замена зеркала заднего вида</li>
-                  <li>Кодировка блоков</li>
-                  <li>Проверка после установки</li>
-                </ul>
-              </div>
-            </article>
-          </div>
+          <article class="case-card case-wide" data-reveal>
+            <div class="case-media">
+              <picture>
+                <source srcset="./media/case-4.webp" type="image/webp" />
+                <img src="./media/case-4.jpg" alt="BMW G30 зеркало и кодировки" width="900" height="560" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="case-body">
+              <p class="case-model">BMW G30</p>
+              <h3>Зеркало и кодировки</h3>
+              <ul>
+                <li>Замена зеркала заднего вида</li>
+                <li>Кодировка блоков</li>
+                <li>Проверка после установки</li>
+              </ul>
+            </div>
+          </article>
         </div>
       </section>
 
       <section class="facts section" id="facts">
-        <div class="shell facts-layout">
-          <h2>Коротко по делу</h2>
+        <div class="facts-layout">
+          <h2>Коротко<br />по делу</h2>
           <ul class="facts-list">
-            <li>
+            <li data-reveal>
               <strong>Сначала разбор</strong>
-              <span>По телефону или в боксе скажем, что реально нужно. Без лишних работ «на всякий случай».</span>
+              <span>По телефону или в боксе скажем, что реально нужно. Без работ «на всякий случай».</span>
             </li>
-            <li>
+            <li data-reveal>
               <strong>BMW — основной профиль</strong>
               <span>Также берём Audi, Mercedes и Volkswagen, если есть слот.</span>
             </li>
-            <li>
+            <li data-reveal>
               <strong>Всё на одной площадке</strong>
               <span>Ремонт, чип, выхлоп, кузов, развал и мойка — Гремяченская, 5.</span>
             </li>
-            <li>
+            <li data-reveal>
               <strong>4,9 на Яндексе</strong>
               <span>~560 оценок. Можно открыть карты и прочитать отзывы.</span>
             </li>
@@ -319,7 +333,8 @@
       <section class="services section" id="services">
         <div class="shell services-layout">
           <header class="services-intro">
-            <h2>Услуги и ориентиры</h2>
+            <p class="eyebrow">Прайс-ориентир</p>
+            <h2>Услуги</h2>
             <p>Цены с витрины — ориентир. Точную смету даём после осмотра.</p>
           </header>
           <div class="service-grid">
@@ -358,8 +373,9 @@
       </section>
 
       <section class="contact section" id="contact">
-        <div class="shell contact-layout">
+        <div class="contact-layout">
           <div class="contact-copy">
+            <p class="eyebrow">Адрес</p>
             <h2>Гремяченская, 5</h2>
             <p class="contact-lead">Курск. Каждый день 10:00–19:00. Парковка и зона ожидания есть — можно чай, пока смотрим машину.</p>
             <ul class="contact-list">
@@ -401,9 +417,10 @@
       </section>
 
       <section class="book section" id="book">
-        <div class="shell book-layout">
+        <div class="book-layout">
           <div class="book-copy">
-            <h2>Запись в WhatsApp</h2>
+            <p class="eyebrow">Запись</p>
+            <h2>Написать в WhatsApp</h2>
             <p>
               Заполните коротко — откроется чат с готовым текстом. Напишите модель и что беспокоит,
               ответим по сроку и что взять с собой. Это не «отправка заявки» на сайт: сообщение уйдёт к нам в WhatsApp.
@@ -427,7 +444,7 @@
               <textarea name="note" rows="3" placeholder="Что случилось и когда удобно приехать"></textarea>
             </label>
             <input class="hp" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <button class="btn" type="submit">Открыть WhatsApp</button>
+            <button class="btn" type="submit" data-magnetic>Открыть WhatsApp</button>
             <p class="form-hint" data-form-status role="status"></p>
           </form>
         </div>
