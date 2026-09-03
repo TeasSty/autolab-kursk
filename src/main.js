@@ -5,6 +5,8 @@ const saveData = navigator.connection?.saveData
 const lowEnd = (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4
 const allowFx = !reduceMotion && !saveData && !lowEnd
 
+if (!allowFx) document.documentElement.classList.add('no-fx')
+
 const year = document.querySelector('[data-year]')
 if (year) year.textContent = String(new Date().getFullYear())
 
@@ -68,12 +70,32 @@ document.querySelectorAll('[data-magnetic]').forEach((btn) => {
     const rect = btn.getBoundingClientRect()
     const x = e.clientX - rect.left - rect.width / 2
     const y = e.clientY - rect.top - rect.height / 2
-    btn.style.transform = `translate(${x * 0.12}px, ${y * 0.18}px)`
+    btn.style.transform = `translate(${x * 0.08}px, ${y * 0.1}px)`
   })
   btn.addEventListener('pointerleave', () => {
     btn.style.transform = ''
   })
 })
+
+if (allowFx && 'IntersectionObserver' in window) {
+  const cards = document.querySelectorAll('.case-card')
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        const el = entry.target
+        const i = [...cards].indexOf(el)
+        el.style.transitionDelay = `${Math.max(0, i) * 0.08}s`
+        el.classList.add('is-in')
+        io.unobserve(el)
+      })
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+  )
+  cards.forEach((card) => io.observe(card))
+} else {
+  document.querySelectorAll('.case-card').forEach((card) => card.classList.add('is-in'))
+}
 
 const form = document.querySelector('[data-book-form]')
 const status = document.querySelector('[data-form-status]')
@@ -111,62 +133,3 @@ form?.addEventListener('submit', (e) => {
   status.classList.remove('is-error')
   window.open(`https://wa.me/79308577700?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer')
 })
-
-function initBeams() {
-  const canvas = document.getElementById('beam-canvas')
-  if (!canvas || !allowFx) {
-    canvas?.remove()
-    return
-  }
-
-  const ctx = canvas.getContext('2d', { alpha: true })
-  if (!ctx) return
-
-  let raf = 0
-  const beams = Array.from({ length: 3 }, (_, i) => ({
-    x: 0.55 + i * 0.12,
-    speed: 0.00015 + i * 0.00005,
-    phase: i * 1.7,
-    width: 90 + i * 40,
-  }))
-
-  const resize = () => {
-    canvas.width = window.innerWidth * devicePixelRatio
-    canvas.height = window.innerHeight * devicePixelRatio
-    canvas.style.width = `${window.innerWidth}px`
-    canvas.style.height = `${window.innerHeight}px`
-    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0)
-  }
-
-  resize()
-  window.addEventListener('resize', resize, { passive: true })
-
-  const draw = (t) => {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-    for (const beam of beams) {
-      const drift = Math.sin(t * beam.speed + beam.phase) * 40
-      const x = window.innerWidth * beam.x + drift
-      const grad = ctx.createLinearGradient(x, 0, x + beam.width, window.innerHeight)
-      grad.addColorStop(0, 'rgba(196,163,90,0)')
-      grad.addColorStop(0.45, 'rgba(196,163,90,0.04)')
-      grad.addColorStop(1, 'rgba(196,163,90,0)')
-      ctx.fillStyle = grad
-      ctx.beginPath()
-      ctx.moveTo(x, 0)
-      ctx.lineTo(x + beam.width, 0)
-      ctx.lineTo(x + beam.width * 0.35, window.innerHeight)
-      ctx.lineTo(x - beam.width * 0.55, window.innerHeight)
-      ctx.closePath()
-      ctx.fill()
-    }
-    raf = requestAnimationFrame(draw)
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) cancelAnimationFrame(raf)
-    else raf = requestAnimationFrame(draw)
-  })
-  raf = requestAnimationFrame(draw)
-}
-
-initBeams()

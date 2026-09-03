@@ -8,7 +8,7 @@
       name="description"
       content="АвтоЛаб в Курске: диагностика, чип-тюнинг, выхлоп и ремонт BMW. Гремяченская, 5. Запись: +7 (930) 857-77-00."
     />
-    <meta name="theme-color" content="#0E0F11" />
+    <meta name="theme-color" content="#0A0B0C" />
     <link rel="canonical" href="https://teassty.github.io/autolab-kursk/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
@@ -22,10 +22,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E0F11'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='14' fill='%23C4A35A'%3EAL%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0B0C'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='14' fill='%23B8954A'%3EAL%3C/text%3E%3C/svg%3E" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -64,7 +64,6 @@
   <body>
     <a class="skip-link" href="#main">К содержимому</a>
     <div class="noise" aria-hidden="true"></div>
-    <canvas id="beam-canvas" class="beam-canvas" aria-hidden="true"></canvas>
 
     <header class="site-header" data-header>
       <div class="shell header-inner">
@@ -86,7 +85,11 @@
     <main id="main">
       <section class="hero" id="top" data-hero>
         <div class="hero-stage">
-          <div class="hero-door" data-door aria-hidden="true"></div>
+          <div class="hero-door" data-door aria-hidden="true">
+            <span class="door-panel"></span>
+            <span class="door-panel"></span>
+            <span class="door-panel"></span>
+          </div>
           <picture>
             <source srcset="./media/hero.webp" type="image/webp" />
             <img
@@ -102,50 +105,20 @@
             />
           </picture>
           <div class="hero-veil"></div>
-          <div class="hero-sweep" aria-hidden="true"></div>
         </div>
 
         <div class="shell hero-copy">
-          <p class="eyebrow">Курск · Гремяченская, 5 · ежедневно 10:00–19:00</p>
+          <p class="eyebrow" data-reveal>Курск · Гремяченская, 5</p>
           <h1>
-            <span class="hero-line" data-reveal>Сервис BMW</span>
-            <span class="hero-line accent" data-reveal>в Курске</span>
-            <span class="hero-line" data-reveal>без дилерской очереди</span>
+            <span class="hero-line brand" data-reveal>АвтоЛаб</span>
+            <span class="hero-line" data-reveal>Бокс, не конвейер</span>
           </h1>
           <p class="hero-lead" data-reveal>
-            Диагностика, чип, выхлоп и ремонт в одном комплексе.
-            Можно просто позвонить — разберём, что с машиной, и скажем по срокам.
+            Диагностика, чип, выхлоп и ремонт BMW — в одном комплексе на Гремяченской.
           </p>
           <div class="hero-cta" data-reveal>
-            <a class="btn" href="#book" data-magnetic>Записаться</a>
-            <a
-              class="btn btn-ghost"
-              href="https://wa.me/79308577700?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%D0%90%D0%B2%D1%82%D0%BE%D0%9B%D0%B0%D0%B1."
-              target="_blank"
-              rel="noopener noreferrer"
-              >WhatsApp</a
-            >
-          </div>
-          <dl class="hero-meta" data-reveal>
-            <div>
-              <dt>Яндекс</dt>
-              <dd>4,9 · около 560 оценок</dd>
-            </div>
-            <div>
-              <dt>Марки</dt>
-              <dd>BMW · Audi · MB · VW</dd>
-            </div>
-            <div>
-              <dt>Адрес</dt>
-              <dd>Гремяченская, 5</dd>
-            </div>
-          </dl>
-        </div>
-
-        <div class="model-ticker" aria-hidden="true">
-          <div class="model-track">
-            <span>E39</span><span>E60</span><span>E90</span><span>F10</span><span>F30</span><span>G30</span><span>X5</span><span>X7</span><span>STAGE&nbsp;1</span><span>STAGE&nbsp;2</span>
-            <span>E39</span><span>E60</span><span>E90</span><span>F10</span><span>F30</span><span>G30</span><span>X5</span><span>X7</span><span>STAGE&nbsp;1</span><span>STAGE&nbsp;2</span>
+            <a class="btn" href="#book" data-magnetic>Запись</a>
+            <a class="hero-phone" href="tel:+79308577700">+7 (930) 857-77-00</a>
           </div>
         </div>
       </section>
@@ -154,9 +127,9 @@
         <div class="shell">
           <div class="section-head">
             <p class="eyebrow">Комплекс</p>
-            <h2>Пять зон. Один визит.</h2>
+            <h2>Пять зон. Один визит</h2>
             <p class="section-lead">
-              Переключайте вкладки — от диагностики до мойки. Всё на одной площадке.
+              Диагностика, чип, выхлоп, кузов и мойка — на одной площадке.
             </p>
           </div>
 
@@ -243,80 +216,80 @@
       <section class="cases section" id="cases">
         <div class="shell">
           <div class="section-head">
-            <p class="eyebrow">Из ленты сервиса</p>
+            <p class="eyebrow">Из бокса</p>
             <h2>Недавние работы</h2>
-            <p class="section-lead">Реальные машины с постами АвтоЛаб — модели, работы, результат.</p>
+            <p class="section-lead">Машины с постов АвтоЛаб — модель, что сделали, результат.</p>
           </div>
-        </div>
-        <div class="case-rail" tabindex="0" aria-label="Лента работ">
-          <article class="case-card">
-            <div class="case-media">
-              <picture>
-                <source srcset="./media/case-1.webp" type="image/webp" />
-                <img src="./media/case-1.jpg" alt="BMW F30 после работ" width="900" height="560" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-            <div class="case-body">
-              <p class="case-model">BMW F30</p>
-              <h3>Downpipe + Stage 1</h3>
-              <ul>
-                <li>Сварка и установка downpipe</li>
-                <li>Прямоток и управляемая заслонка</li>
-                <li>Чип Stage 1</li>
-              </ul>
-            </div>
-          </article>
-          <article class="case-card">
-            <div class="case-media">
-              <picture>
-                <source srcset="./media/case-2.webp" type="image/webp" />
-                <img src="./media/case-2.jpg" alt="BMW X5 на обслуживании" width="900" height="560" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-            <div class="case-body">
-              <p class="case-model">BMW X5 E70</p>
-              <h3>Vanos</h3>
-              <ul>
-                <li>Проверка впуска дымогенератором</li>
-                <li>Клапаны и звёзды Vanos</li>
-                <li>Сброс адаптаций</li>
-              </ul>
-            </div>
-          </article>
-          <article class="case-card">
-            <div class="case-media">
-              <picture>
-                <source srcset="./media/case-3.webp" type="image/webp" />
-                <img src="./media/case-3.jpg" alt="BMW X7 Stage 1" width="900" height="560" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-            <div class="case-body">
-              <p class="case-model">BMW X7</p>
-              <h3>Stage 1 дизель</h3>
-              <ul>
-                <li>249 → 335 л.с.</li>
-                <li>Момент 620 → 740 Н·м</li>
-                <li>Программное увеличение мощности</li>
-              </ul>
-            </div>
-          </article>
-          <article class="case-card">
-            <div class="case-media">
-              <picture>
-                <source srcset="./media/case-4.webp" type="image/webp" />
-                <img src="./media/case-4.jpg" alt="Работа по BMW G30" width="900" height="560" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-            <div class="case-body">
-              <p class="case-model">BMW G30</p>
-              <h3>Зеркало и кодировки</h3>
-              <ul>
-                <li>Замена зеркала заднего вида</li>
-                <li>Кодировка блоков</li>
-                <li>Проверка после установки</li>
-              </ul>
-            </div>
-          </article>
+          <div class="case-grid">
+            <article class="case-card">
+              <div class="case-media">
+                <picture>
+                  <source srcset="./media/case-1.webp" type="image/webp" />
+                  <img src="./media/case-1.jpg" alt="BMW F30 после работ" width="900" height="560" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="case-body">
+                <p class="case-model">BMW F30</p>
+                <h3>Downpipe + Stage 1</h3>
+                <ul>
+                  <li>Сварка и установка downpipe</li>
+                  <li>Прямоток и управляемая заслонка</li>
+                  <li>Чип Stage 1</li>
+                </ul>
+              </div>
+            </article>
+            <article class="case-card">
+              <div class="case-media">
+                <picture>
+                  <source srcset="./media/case-2.webp" type="image/webp" />
+                  <img src="./media/case-2.jpg" alt="BMW X5 на обслуживании" width="900" height="560" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="case-body">
+                <p class="case-model">BMW X5 E70</p>
+                <h3>Vanos</h3>
+                <ul>
+                  <li>Проверка впуска дымогенератором</li>
+                  <li>Клапаны и звёзды Vanos</li>
+                  <li>Сброс адаптаций</li>
+                </ul>
+              </div>
+            </article>
+            <article class="case-card">
+              <div class="case-media">
+                <picture>
+                  <source srcset="./media/case-3.webp" type="image/webp" />
+                  <img src="./media/case-3.jpg" alt="BMW X7 Stage 1" width="900" height="560" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="case-body">
+                <p class="case-model">BMW X7</p>
+                <h3>Stage 1 дизель</h3>
+                <ul>
+                  <li>249 → 335 л.с.</li>
+                  <li>Момент 620 → 740 Н·м</li>
+                  <li>Программное увеличение мощности</li>
+                </ul>
+              </div>
+            </article>
+            <article class="case-card">
+              <div class="case-media">
+                <picture>
+                  <source srcset="./media/case-4.webp" type="image/webp" />
+                  <img src="./media/case-4.jpg" alt="Работа по BMW G30" width="900" height="560" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="case-body">
+                <p class="case-model">BMW G30</p>
+                <h3>Зеркало и кодировки</h3>
+                <ul>
+                  <li>Замена зеркала заднего вида</li>
+                  <li>Кодировка блоков</li>
+                  <li>Проверка после установки</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -329,19 +302,19 @@
           <ul class="why-list">
             <li>
               <strong>Сначала разбор</strong>
-              <span>Бесплатно проконсультируем по телефону или в боксе. Без навязанных работ.</span>
+              <span>По телефону или в боксе скажем, что реально нужно. Без навязанных работ.</span>
             </li>
             <li>
-              <strong>BMW и немецкие марки</strong>
-              <span>Основной опыт — BMW. Также берём Audi, Mercedes и Volkswagen.</span>
+              <strong>BMW и немцы</strong>
+              <span>Основной опыт — BMW. Берём также Audi, Mercedes и Volkswagen.</span>
             </li>
             <li>
-              <strong>Всё в одном месте</strong>
+              <strong>Всё на одной площадке</strong>
               <span>Ремонт, чип, выхлоп, кузов, развал и мойка — Гремяченская, 5.</span>
             </li>
             <li>
-              <strong>Оценка на картах</strong>
-              <span>4,9 на Яндекс.Картах, около 560 оценок — можно открыть и прочитать.</span>
+              <strong>4,9 на Яндексе</strong>
+              <span>Около 560 оценок — можно открыть карты и прочитать отзывы.</span>
             </li>
           </ul>
         </div>
@@ -353,7 +326,7 @@
             <p class="eyebrow">Услуги</p>
             <h2>Что делаем</h2>
             <p class="section-lead">
-              Цены ниже — ориентир с витрины. Точную смету даём после осмотра или диагностики.
+              Цены — ориентир с витрины. Точную смету даём после осмотра.
             </p>
           </div>
           <div class="service-grid">
@@ -437,7 +410,7 @@
             <p class="eyebrow">Запись</p>
             <h2>Напишите в WhatsApp</h2>
             <p class="section-lead">
-              Заполните коротко — откроется чат с готовым текстом. Ответим по сроку и что нужно привезти.
+              Коротко заполните форму — откроется чат с готовым текстом. Ответим по сроку и что взять с собой.
             </p>
           </div>
           <form class="book-form" data-book-form novalidate>
